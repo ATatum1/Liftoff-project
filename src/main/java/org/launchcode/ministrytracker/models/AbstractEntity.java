@@ -7,6 +7,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
+
+
+
 @MappedSuperclass
 public abstract class AbstractEntity {
 
@@ -14,8 +17,8 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank(message ="Name is required")
-    @Size(min = 2, max= 255, message= "Name must be between 2 and 255 characters")
+    @NotBlank(message = "Name is required")
+    //@Size(min = 2, max = 255, message = "Name must be between 2 and 255 characters")
     private String name;
 
     public int getId() {
@@ -47,4 +50,5 @@ public abstract class AbstractEntity {
     public int hashCode() {
         return Objects.hash(id);
     }
+}
 
