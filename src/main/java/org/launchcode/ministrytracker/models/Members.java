@@ -12,6 +12,8 @@ public class Members extends AbstractEntity{
     @NotBlank(message ="Phone number is required")
     private String phoneNumber;
 
+    //private List<Ministry>
+
 
     public Members(){};
 

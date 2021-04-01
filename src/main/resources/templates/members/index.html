@@ -5,8 +5,9 @@
 <body>
 
 <div th:replace="fragments :: page-header"></div>
+<p>Testing Member Index page </p>
 
-<p th:unless="${members} and ${members.size()}">No members!</p>
+<p th:unless="${members} and ${members.size()}">no members!</p>
 
 <div class="container body-content">
     <h2>Members</h2>
@@ -15,7 +16,7 @@
             <a th:href="@{'/members/view/' + ${member.id}}" th:text="${member.name}"></a>
         </li>
     </ul>
-    <a th:href="@{'/employers/add'}">Add Members</a>
+    <a th:href="@{'/members/add'}">Add Members</a>
 
 </div>
 

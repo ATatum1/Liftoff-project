@@ -1,5 +1,6 @@
 package org.launchcode.ministrytracker.controllers;
 
+import org.launchcode.ministrytracker.models.Members;
 import org.launchcode.ministrytracker.models.data.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,9 +23,15 @@ public class MemberController {
     @Autowired
     private MemberRepository memberRepository;
 
+    @GetMapping("add")
+    public String displayAddMemberForm(Model model){
+    model.addAttribute(new Members());
+    return"members/add";
+    }
+
     @GetMapping ("")
     public String index(Model model){
-        model.addAttribute("members",memberRepository.findAll());
+        //model.addAttribute("members",memberRepository.findAll());
         return "members/index";
 
 
