@@ -14,6 +14,8 @@ public class Members extends AbstractEntity{
 
     //private List<Ministry>
 
+    private final List<Ministry>ministries = new ArrayList<>();
+
 
     public Members(){};
 
@@ -29,5 +31,7 @@ public class Members extends AbstractEntity{
         this.phoneNumber = phoneNumber;
     }
 
-
+    public List<Ministry> getMinistries() {
+        return ministries;
+    }
 }

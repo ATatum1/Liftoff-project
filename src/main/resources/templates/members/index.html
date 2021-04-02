@@ -20,5 +20,17 @@
 
 </div>
 
+<div class="job-listing">
+    <p th:text="${'Name: ' + members.name}"></p>
+    <p th:text="${'Phone Number: ' + members.phoneNumber}"></p>
+    <p> Jobs:
+    <ul>
+        <li th:each="ministry : ${members.ministries}">
+            <a th:href="@{'/index/' + ${ministry.id}}" th:text="${ministry.name}"></a>
+        </li>
+    </ul>
+
+</div>
+
 </body>
 </html>
