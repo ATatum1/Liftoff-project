@@ -5,30 +5,29 @@
 <body>
 
 <div th:replace="fragments :: page-header"></div>
-<p>Testing Member Index page </p>
 
 <p th:unless="${members} and ${members.size()}">no members!</p>
 
 <div class="container body-content">
     <h2>Members</h2>
+
     <ul>
         <li th:each="member : ${members}">
-            <a th:href="@{'/members/view/' + ${member.id}}" th:text="${member.name}"></a>
+            <p th:text = "${member.name}"></p>
+            <p th:text = "${member.phoneNumber}"></p>
+            <p th:text = "${member.email}"></p>
         </li>
-    </ul>
-    <a th:href="@{'/members/add'}">Add Members</a>
+        <a th:href="@{'/members/add'}">Add Member</a>
 
-</div>
 
-<div class="job-listing">
-    <p th:text="${'Name: ' + members.name}"></p>
-    <p th:text="${'Phone Number: ' + members.phoneNumber}"></p>
-    <p> Jobs:
-    <ul>
-        <li th:each="ministry : ${members.ministries}">
-            <a th:href="@{'/index/' + ${ministry.id}}" th:text="${ministry.name}"></a>
-        </li>
+
     </ul>
+
+
+
+
+
+
 
 </div>
 

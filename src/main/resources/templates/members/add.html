@@ -12,14 +12,20 @@
 
     <div class="form-group">
         <label th:for="name">Member Name</label>
-        <input class="form-control" th:field="${members.name}" />
-        <span th:errors="${members.name}" class="error"></span>
+        <input class="form-control" th:field="${members.name}"/>
+
     </div>
     <div class="form-group">
         <label th:for="description">Member Phone Number</label>
-        <input class="form-control" th:field="${members.phoneNumber}" />
+        <input class="form-control" th:field="${members.phoneNumber}"/>
         <span th:errors="${members.phoneNumber}" class="error"></span>
     </div>
+    <div class="form-group">
+        <label th:for="description">Member Email</label>
+        <input class="form-control" th:field="${members.email}"/>
+        <span th:errors="${members.email}" class="error"></span>
+    </div>
+
 
 
 

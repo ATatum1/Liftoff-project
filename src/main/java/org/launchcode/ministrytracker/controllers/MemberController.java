@@ -9,10 +9,10 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-//import java.lang.reflect.Member;
+import java.util.Optional;
+import java.lang.reflect.Member;
 
 @Controller
-//@RequestMapping("templates/templates")
 @RequestMapping("members")
 public class MemberController {
 
@@ -32,6 +32,22 @@ public class MemberController {
     return"members/add";
     }
 
+    @GetMapping ("")
+    public String index(Model model){
+
+
+        //model.addAttribute("members",memberRepository.findAll());
+        model.addAttribute("members",memberRepository.findAll());
+        //model.addAttribute("members",
+        //model.addAttribute("phoneNumber",memberRepository.equals("phoneNumber"));
+        //model.addAttribute("phoneNumber",memberRepository.findAll());
+        return "members/index";
+        //return memberRepository.findAll();
+
+
+
+    }
+
     @PostMapping("add")
     public String processAddMemberForm(@ModelAttribute @Valid Members newMember, Errors errors, Model model){
 
@@ -44,16 +60,31 @@ public class MemberController {
 
         memberRepository.save(newMember);
         //return "redirect";
-        return "members/index";
-    }
-
-    @GetMapping ("")
-    public String index(Model model){
-        model.addAttribute("members",memberRepository.findAll());
-        return "members/index";
+        return "redirect:";
 
 
     }
+
+//    @GetMapping("view/{memberId}")
+//    public String displayViewMember(Model model, @PathVariable int memberId) {
+//        //public String displayViewEmployer(Model model, @PathVariable )
+//        //Optional optEmployer = null;
+//        Optional optMembers = memberRepository.findById(memberId);
+//        if (optMembers.isPresent()) {
+//            Members member = (Members) optMembers.get();
+//            model.addAttribute("members",member);
+//
+//            return "members/view";
+//        } else {
+//
+//
+//            return "redirect:../";
+//
+//        }
+
+    }
+
+
 
 
 
@@ -110,6 +141,5 @@ public class MemberController {
 //    }
 
 
-}
 
 
