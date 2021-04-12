@@ -12,7 +12,7 @@ import java.util.List;
 public class Todo extends AbstractEntity{
 
 
-    private String dueDate;
+    private String date;
 
     @NotBlank(message ="Task detail is  required")
     private String taskDetails;
@@ -24,18 +24,18 @@ public class Todo extends AbstractEntity{
 
     public Todo(){};
 
-    public Todo(String dueDate,String taskDetails) {
+    public Todo(String date,String taskDetails) {
 
-        this.dueDate = dueDate;
+        this.date = date;
         this.taskDetails = taskDetails;
     }
 
-    public String getDueDate() {
-        return dueDate;
+    public String getDate() {
+        return date;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTaskDetails() {

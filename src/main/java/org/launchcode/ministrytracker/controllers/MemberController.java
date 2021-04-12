@@ -2,6 +2,7 @@ package org.launchcode.ministrytracker.controllers;
 
 import org.launchcode.ministrytracker.models.Members;
 import org.launchcode.ministrytracker.models.data.MemberRepository;
+import org.launchcode.ministrytracker.models.data.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ public class MemberController {
 
     @Autowired
     private MemberRepository memberRepository;
+    @Autowired
+    private TodoRepository todoRepository;
 
     @GetMapping("add")
     public String displayAddMemberForm(Model model){
@@ -38,6 +41,7 @@ public class MemberController {
 
         //model.addAttribute("members",memberRepository.findAll());
         model.addAttribute("members",memberRepository.findAll());
+        model.addAttribute("todo",todoRepository.findAll());
         //model.addAttribute("members",
         //model.addAttribute("phoneNumber",memberRepository.equals("phoneNumber"));
         //model.addAttribute("phoneNumber",memberRepository.findAll());
