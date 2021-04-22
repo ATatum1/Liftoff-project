@@ -1,9 +1,11 @@
 package org.launchcode.ministrytracker.controllers;
 
 import org.launchcode.ministrytracker.models.Members;
+import org.launchcode.ministrytracker.models.Todo;
 import org.launchcode.ministrytracker.models.data.MemberRepository;
 import org.launchcode.ministrytracker.models.data.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.server.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -85,6 +87,28 @@ public class MemberController {
 //            return "redirect:../";
 //
 //        }
+
+    //trying processtodoform on member controller
+
+    @PostMapping("add")
+    public String processTodoForm(@ModelAttribute @Valid Todo newTodo, Errors errors, Model model){
+
+        if(errors.hasErrors()) {
+            model.addAttribute("title", "Add Todo Item");
+            model.addAttribute("todo", todoRepository.findAll());
+
+            return "members/add";
+        }
+
+       todoRepository.save(newTodo);
+        //return "redirect";
+        return "redirect:";
+
+
+    }
+
+
+
 
     }
 

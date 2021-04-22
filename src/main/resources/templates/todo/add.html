@@ -12,22 +12,19 @@
 
     <div class="form-group">
         <label th:for="name">Task Name</label>
-        <input class="form-control" th:field="${todo.name}"/>
+        <input class="form-control" th:field="${todo.name}" required/>
 
     </div>
     <div class="form-group">
         <label th:for="description">Task Due Date</label>
-        <input class="form-control" th:field="${todo.date}"/>
+        <input class="form-control" th:field="${todo.date}" required/>
 
     </div>
     <div class="form-group">
         <label th:for="description">Task Details</label>
-        <input class="form-control" th:field="${todo.taskDetails}"/>
+        <input class="form-control" th:field="${todo.taskDetails}" required/>
 
     </div>
-
-
-
 
     <input type="submit" value="Add Todo item" />
 </form>

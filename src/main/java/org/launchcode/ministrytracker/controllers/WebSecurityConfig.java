@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.test.web.reactive.server.SecurityMockServerConfigurers;
 
 @Configuration
 @EnableWebSecurity
@@ -16,8 +17,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+
+                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/index").permitAll()
+                .antMatchers("/", "/index","members").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -26,6 +29,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .permitAll();
+
+
+
+
+
     }
 
     @Bean
@@ -40,4 +48,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         return new InMemoryUserDetailsManager(user);
     }
+
+
+
+//    UsernamePasswordAuthenticationToken authReq
+//            = new UsernamePasswordAuthenticationToken(user, pass);
+//    Authentication auth = authManager.authenticate(authReq);
+//    SecurityContext sc = SecurityContextHolder.getContext();
+//sc.setAuthentication(auth);
 }

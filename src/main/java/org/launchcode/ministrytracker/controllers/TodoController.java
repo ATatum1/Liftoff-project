@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 
-@RequestMapping("todo")
 @Controller
+@RequestMapping("todo")
 public class TodoController {
 
     @Autowired
@@ -30,22 +30,23 @@ public class TodoController {
 
 
 
-    @PostMapping("add")
-    public String processTodoForm(@ModelAttribute @Valid Todo newTodo, Errors errors, Model model){
-
-        if(errors.hasErrors()) {
-            model.addAttribute("title", "Add Todo Item");
-            model.addAttribute("todo", todoRepository.findAll());
-
-            return "members/add";
-        }
-
-       todoRepository.save(newTodo);
-        //return "redirect";
-        return "redirect:";
-
-
-    }
+    //trying in membercontroller
+//    @PostMapping("add")
+//    public String processTodoForm(@ModelAttribute @Valid Todo newTodo, Errors errors, Model model){
+//
+//        if(errors.hasErrors()) {
+//            model.addAttribute("title", "Add Todo Item");
+//            model.addAttribute("todo", todoRepository.findAll());
+//
+//            return "members/add";
+//        }
+//
+//       todoRepository.save(newTodo);
+//        //return "redirect";
+//        return "redirect:";
+//
+//
+//    }
 
 
 

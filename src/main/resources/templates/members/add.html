@@ -7,31 +7,30 @@
 
 <h1>Add member</h1>
 
-<form method="post" style="max-width:600px;">
 
+<form method="post" style="max-width:600px;">
 
     <div class="form-group">
         <label th:for="name">Member Name</label>
-        <input class="form-control" th:field="${members.name}"/>
+        <input class="form-control" th:field="${members.name}" required/>
 
     </div>
     <div class="form-group">
         <label th:for="description">Member Phone Number</label>
-        <input class="form-control" th:field="${members.phoneNumber}"/>
-        <span th:errors="${members.phoneNumber}" class="error"></span>
+        <input class="form-control" th:field="${members.phoneNumber}" required/>
+
     </div>
     <div class="form-group">
         <label th:for="description">Member Email</label>
-        <input class="form-control" th:field="${members.email}"/>
-        <span th:errors="${members.email}" class="error"></span>
+        <input class="form-control" th:field="${members.email}" required/>
+
     </div>
 
-
-
-
     <input type="submit" value="Add Member" />
-</form>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
+</form>
+<csrf />
 </body>
 </html>
 

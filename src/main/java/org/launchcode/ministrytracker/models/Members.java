@@ -12,11 +12,12 @@ import java.util.List;
 public class Members extends AbstractEntity{
 
     @NotBlank(message ="Phone number is required")
-    @Size(min=7,message = "Phone number must have at least 7 digits")
+    //@Size(min=7,message = "Phone number must have at least 7 digits")
     private String phoneNumber;
 
+    //@Email (message= "must be an email")
     @NotBlank(message ="Email is required")
-    @Email(message="Not a valid email")
+    //@Email(message="Not a valid email")
     private String email;
 
     //private List<Ministry>
