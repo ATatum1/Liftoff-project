@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<h1>Spirit of Love Ministry Tracker </h1>
+
+<h2>Welcome [[${#httpServletRequest.remoteUser}]] to your Ministry page!</h2>
+
+<form method="post" style="max-width:600px;">
+
+
+
+
+
+
+
+    <p>Click <a th:href="@{/members}">here</a> to view and add ministry members.</p>
+    <p>Click <a th:href="@{/todo}">here</a> to view and add ministry todo list.</p>
+
+
+
+
+</form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+</body>
+</html>

@@ -22,6 +22,23 @@ public class TodoController {
     @Autowired
     private TodoRepository todoRepository;
 
+    @GetMapping ("")
+    public String index(Model model){
+
+
+        //model.addAttribute("members",memberRepository.findAll());
+        model.addAttribute("todo",todoRepository.findAll());
+
+        //model.addAttribute("members",
+        //model.addAttribute("phoneNumber",memberRepository.equals("phoneNumber"));
+        //model.addAttribute("phoneNumber",memberRepository.findAll());
+        return "todo/index";
+        //return memberRepository.findAll();
+
+
+    }
+
+
     @GetMapping("add")
     public String displayAddTodoForm(Model model){
         model.addAttribute(new Todo());
@@ -30,23 +47,23 @@ public class TodoController {
 
 
 
-    //trying in membercontroller
-//    @PostMapping("add")
-//    public String processTodoForm(@ModelAttribute @Valid Todo newTodo, Errors errors, Model model){
-//
-//        if(errors.hasErrors()) {
-//            model.addAttribute("title", "Add Todo Item");
-//            model.addAttribute("todo", todoRepository.findAll());
-//
-//            return "members/add";
-//        }
-//
-//       todoRepository.save(newTodo);
-//        //return "redirect";
-//        return "redirect:";
-//
-//
-//    }
+
+    @PostMapping("add")
+    public String processTodoForm(@ModelAttribute @Valid Todo newTodo, Errors errors, Model model){
+
+        if(errors.hasErrors()) {
+            model.addAttribute("title", "Add Todo Item");
+            model.addAttribute("todo", todoRepository.findAll());
+
+            return "todo/add";
+        }
+
+       todoRepository.save(newTodo);
+        //return "redirect";
+        return "redirect:";
+
+
+    }
 
 
 

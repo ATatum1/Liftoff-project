@@ -11,25 +11,32 @@
 <!h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 <h2>Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 
-<p th:unless="${members} and ${members.size()}">no members!</p>
-
-<div class="container body-content">
-    <h2>Members</h2>
-
-    <ul>
-        <li th:each="member : ${members}">
-            <p th:text = "${member.name}"></p>
-            <p th:text = "${member.phoneNumber}"></p>
-            <p th:text = "${member.email}"></p>
-        </li>
-        <a th:href="@{'/members/add'}">Add Member</a>
+<p th:unless="${todo} and ${todo.size()}">no todo items!</p>
 
 
+    <div class="container body-content">
+        <h2>Todo Items</h2>
 
-    </ul>
+        <ul>
+            <li th:each="todoItem : ${todo}">
+                <p th:text = "${todoItem.name}"></p>
+                <p th:text = "${todoItem.date}"></p>
+                <p th:text = "${todoItem.taskDetails}"></p>
+            </li>
+            <a th:href="@{'/todo/add'}">Add Todo Item</a>
 
 
-</div>
+
+        </ul>
+
+
+
+
+
+
+
+    </div>
+
 
 
 <p> <a th:href="@{/landingScreen}">Ministry Home</a> </p>
