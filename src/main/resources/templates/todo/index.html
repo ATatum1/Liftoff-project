@@ -14,27 +14,24 @@
 <p th:unless="${todo} and ${todo.size()}">no todo items!</p>
 
 
-    <div class="container body-content">
+    <!--<div class="container body-content">-->
+    <!--<label class="label"> -->
         <h2>Todo Items</h2>
 
         <ul>
             <li th:each="todoItem : ${todo}">
-                <p th:text = "${todoItem.name}"></p>
+              <!--<p th:text = "${todoItem.name}"></p>-->
+                <input type="checkbox" name="checkbox"value="${todoItem.name}">
+                <label th:text="${todoItem.name}">Test</label>
+                <!--<input type="checkbox" name="checkbox"value="text">
+                <label th:text = "${todoItem.name}"></label> -->
                 <p th:text = "${todoItem.date}"></p>
                 <p th:text = "${todoItem.taskDetails}"></p>
             </li>
             <a th:href="@{'/todo/add'}">Add Todo Item</a>
 
-
-
         </ul>
-
-
-
-
-
-
-
+   <!-- </label>-->
     </div>
 
 

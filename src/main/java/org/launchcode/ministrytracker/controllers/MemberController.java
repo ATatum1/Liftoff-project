@@ -1,19 +1,14 @@
 package org.launchcode.ministrytracker.controllers;
 
 import org.launchcode.ministrytracker.models.Members;
-import org.launchcode.ministrytracker.models.Todo;
-import org.launchcode.ministrytracker.models.data.MemberRepository;
-import org.launchcode.ministrytracker.models.data.TodoRepository;
+import org.launchcode.ministrytracker.data.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.server.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Optional;
-import java.lang.reflect.Member;
 
 @Controller
 @RequestMapping("members")

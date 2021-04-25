@@ -1,6 +1,5 @@
-package org.launchcode.ministrytracker.models.data;
+package org.launchcode.ministrytracker.data;
 
-import org.launchcode.ministrytracker.models.Members;
 import org.launchcode.ministrytracker.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

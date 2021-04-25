@@ -1,4 +1,4 @@
-package org.launchcode.ministrytracker.models.data;
+package org.launchcode.ministrytracker.data;
 
 
 import org.springframework.stereotype.Repository;
