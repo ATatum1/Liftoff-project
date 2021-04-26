@@ -1,15 +1,21 @@
 package org.launchcode.ministrytracker.controllers;
-
-
-import org.launchcode.ministrytracker.models.Members;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("landingScreen")
 public class HomeController {
+
+    @GetMapping("")
+    public String index(Model model){
+
+
+
+        return "landingScreen";
+
+    }
 
 
 //    @RequestMapping(value="")
@@ -19,12 +25,12 @@ public class HomeController {
 //    }
 
 
-
-    @GetMapping("login")
-    public String displayLoginForm(Model model){
-        //model.addAttribute(new Members());
-        return"login";
-    }
+    //comment out sun 4//25/2021 438p  to test without login code below
+//    @GetMapping("login")
+//    public String displayLoginForm(Model model){
+//        //model.addAttribute(new Members());
+//        return"login";
+//    }
 
 //    @RequestMapping("")
 //    public String displayMembersIndexLink(Model model) {
