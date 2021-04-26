@@ -20,9 +20,9 @@
 
         <ul>
             <li th:each="todoItem : ${todo}">
-              <!--<p th:text = "${todoItem.name}"></p>-->
-                <input type="checkbox" name="checkbox"value="${todoItem.name}">
-                <label th:text="${todoItem.name}">Test</label>
+              <p th:text = "${todoItem.name}"></p>
+                <!--<input type="checkbox" name="checkbox"value="${todoItem.name}">-->
+                <!--<label th:text="${todoItem.name}">Test</label>-->
                 <!--<input type="checkbox" name="checkbox"value="text">
                 <label th:text = "${todoItem.name}"></label> -->
                 <p th:text = "${todoItem.date}"></p>
